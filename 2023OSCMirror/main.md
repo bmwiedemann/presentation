@@ -7,6 +7,21 @@
 * involved with our download infra for some years
 * did also: reproducible builds, openQA, OpenStack, OBS
 
+# Typical problems
+
+## Number of users growing
+![metrics/users/3y](img/20230519-metrics-users-s.png)
+
+## spikes from full rebuilds (1-3 per year)
+![download/year](img/20230519-if_publish-year.png)
+
+## spikes from Leap+Tumbleweed updates
+
+![downloadcontent2/day](img/20230518-if_eth0-day.png)
+
+## short spikes from a company's mass-updates
+![muninapache/day](img/20230519-apache_accesses-day.png)
+
 ## Why do we need to improve?
 
 * high latency causes poor performance outside Europe
@@ -40,17 +55,5 @@
 * split stage.o.o off download.o.o ; with or without /repositories
 * rethink /repositories repopush to reduce write-only data
 * use CDN to handle load-spikes and small files
-
-# Typical problems
-
-## spikes from full rebuilds (1-3 per year)
-![download/year](img/20230519-if_publish-year.png)
-
-## spikes from Leap+Tumbleweed updates
-
-![downloadcontent2/day](img/20230518-if_eth0-day.png)
-
-## short spikes from a company's mass-updates
-![muninapache/day](img/20230519-apache_accesses-day.png)
 
 # Questions & Answers & Discussion
