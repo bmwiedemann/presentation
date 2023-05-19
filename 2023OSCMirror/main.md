@@ -12,6 +12,10 @@
 ## Number of users growing
 ![metrics/users/3y](img/20230519-metrics-users-s.png)
 
+## Maxed out Network Bandwidth
+
+![download/ext/week](img/20230519-if_external-week.png)
+
 ## spikes from full rebuilds (1-3 per year)
 ![download/year](img/20230519-if_publish-year.png)
 
