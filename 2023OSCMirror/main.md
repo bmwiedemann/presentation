@@ -94,7 +94,7 @@
 ## What did we learn?
 
 * turning off multicurl without CDN is not universally beneficial
-* Using a CDN+turning multicurl backend of is *always faster* than default
+* Using a CDN+turning multicurl backend off is *always faster* than default
 * Using a CDN allows turning off a lot of extra infrastructure to maintain (client + server-side!)
 * Medianetwork backend is mixed bag still
 * Manually setting the best mirror is still 3 - 5.5 (!) times faster
