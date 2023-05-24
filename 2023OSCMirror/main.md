@@ -44,13 +44,12 @@
 ![flow](img/download_flow.png)
 
 
-## Why is this so freaking complicated?
+## Why is this so complicated?
 
-* Glad you asked!
-* Geo-IP feature allows to reduce latency to download.o.org (DE) by reconfiguring your client for 24h to a more local copy (mirrorcache in US, BR, JP, AU)
-* Fetching mirror information *per file* means we can still serve some files from partially updated / half broken mirrors
-* Fetching mirror information *per file* also means 2x latency for every file
-* Fetching using threads/multi-curls from mirrors means we can silently discard chunk fetch attempts from broken mirrors (serving corrupt data, or that are down) without affecting the user experience
+* Build for resiliency (expect unreliable / partially updated mirrors)
+* Redirecting *per file* means we can still serve some files from partially updated / half broken mirrors
+* Redirecting *per file* also means 2x latency for every file
+* multicurl can silently discard chunk fetch attempts from broken mirrors
 * Fetching using threads also usually means lower overall performance
 * => Lots of workarounds for unreliable mirrors!
 
@@ -94,8 +93,9 @@
 ## What did we learn?
 
 * turning off multicurl without CDN is not universally beneficial
-* Using a CDN+turning multicurl backend off is *always faster* than default
-* Using a CDN allows turning off a lot of extra infrastructure to maintain (client + server-side!)
+* Using a CDN+turning multicurl backend off is *always faster* than current default
+* Serving all files from CDN would allow turning off a lot of extra
+  infrastructure to maintain (client + server-side!)
 * Medianetwork backend is mixed bag still
 * Manually setting the best mirror is still 3 - 5.5 (!) times faster
   * => needs further improvements in zypper
